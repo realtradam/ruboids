@@ -1,0 +1,3 @@
+## Boids simulation made using [Ruby2D](http://www.ruby2d.com) and [FelFlame](https://github.com/realtradam/FelFlame)
+
+Making this mostly as a test of using FelFlame in a real project, to try out and see if I can find bugs of flaws in it.

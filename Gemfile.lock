@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    felflame (3.0.0)
+    ruby2d (0.10.0)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  felflame (~> 3.0)
+  ruby2d (~> 0.10.0)
+
+BUNDLED WITH
+   2.2.22
