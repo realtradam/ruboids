@@ -22,6 +22,18 @@ FF::Scn::BoidCalculations.add(FF::Sys.new('ApplyBoidCalculations', priority: 75)
     boid.x += boid.vx
     boid.y += boid.vy
 
+    if boid.vx < 0 && !boid.flipped
+      boid.flipped = true
+      spr = boid.entities.first.components[FF::Cmp::BoidVisuals].first.obj
+      spr.width = -(spr.width).abs
+      # flip
+    elsif boid.vx > 0 && boid.flipped
+      # unflip
+      boid.flipped = false
+      spr = boid.entities.first.components[FF::Cmp::BoidVisuals].first.obj
+      spr.width = (spr.width).abs
+    end
+
     boid.cx = 0.0
     boid.cy = 0.0
 

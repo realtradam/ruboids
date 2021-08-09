@@ -1,25 +1,41 @@
 FF::Sys.new('Target', priority: 50) do
 
-  FF::Cmp::Fish[0].entities.each do |ent|
-    farthest = []
-    boid = ent.component[FF::Cmp::Boids].first
-    FF::Cmp::Piranha[0].entities.each do |_piranha|
-      piranha = _piranha.component[FF::Cmp::Boids].first
-      if farthest[0].nil? || Math.sqrt(((boid.x - piranha.x)**2) + ((boid.y + piranha.y)**2)).abs < farthest[0]
-        farthest[0] = Math.sqrt(((boid.x - piranha.x)**2) + ((boid.y + piranha.y)**2)).abs
-        farthest[1] = piranha
+  FF::Cmp::Piranha[0].entities.each do |ent|
+    closest = []
+    boid = ent.components[FF::Cmp::Boids].first
+    FF::Cmp::Fish[0].entities.each do |_fish|
+      fish = _fish.components[FF::Cmp::Boids].first
+      if closest[0].nil? || Math.sqrt(((boid.x - fish.x)**2) + ((boid.y - fish.y)**2)).abs < closest[0]
+        closest[0] = Math.sqrt(((boid.x - fish.x)**2) + ((boid.y - fish.y)**2)).abs
+        closest[1] = fish
       end
     end
-    boid.cx -= (2 * (piranha.x - boid.x) / $config.target_strength)
-    boid.cy -= (2 * (piranha.y - boid.y) / $config.target_strength)
+    boid.cx += ((closest[1].x - boid.x) / $config.target_strength)
+    boid.cy += ((closest[1].y - boid.y) / $config.target_strength)
   end
 
- # FF::Cmp::Piranha[0].entities.each do |ent|
- #   boid = ent.components[FF::Cmp::Boids].first
- #   boid.cx += ($config.target_x - boid.x) / $config.target_strength
- #   boid.cy += ($config.target_y - boid.y) / $config.target_strength
- #   #find closest fish
- # end
+  FF::Cmp::Fish[0].entities.each do |ent|
+    closest = []
+    boid = ent.components[FF::Cmp::Boids].first
+    FF::Cmp::Piranha[0].entities.each do |_piranha|
+      piranha = _piranha.components[FF::Cmp::Boids].first
+      unless Math.sqrt(((boid.x - piranha.x)**2) + ((boid.y + piranha.y)**2)).abs > 250
+        boid.cx -= ($config.target_strength / (piranha.x - boid.x))
+        boid.cy -= ($config.target_strength / (piranha.y - boid.y))
+        #boid.cy -= ((piranha.y - boid.y) / (1.0 / $config.target_strength))
+      end
+      #if closest[0].nil? || Math.sqrt(((boid.x - fish.x)**2) + ((boid.y + fish.y)**2)).abs < closest[0]
+      #  closest[0] = Math.sqrt(((boid.x - fish.x)**2) + ((boid.y + fish.y)**2)).abs
+      #  closest[1] = fish
+      #end
+    end
+  end
+  # FF::Cmp::Piranha[0].entities.each do |ent|
+  #   boid = ent.components[FF::Cmp::Boids].first
+  #   boid.cx += ($config.target_x - boid.x) / $config.target_strength
+  #   boid.cy += ($config.target_y - boid.y) / $config.target_strength
+  #   #find closest fish
+  # end
 
   #FF::Cmp::Boids.each do |boid|
   #  boid.cx += ($config.target_x - boid.x) / $config.target_strength

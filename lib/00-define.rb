@@ -11,10 +11,11 @@ FelFlame::Components.new('Boids',
                          # current velocity
                          vx: 0, vy: 0,
                          # calculated velocity change for next frame
-                         cx: 0, cy: 0)
+                         cx: 0, cy: 0,
+                        flipped: false)
 FelFlame::Components.new('Fish')
 FF::Cmp::Fish.new
 FelFlame::Components.new('Piranha')
 FF::Cmp::Piranha.new
 FelFlame::Components.new('BoidVisuals',
-                         :obj, :vect)
+                         :obj, :vect,)
