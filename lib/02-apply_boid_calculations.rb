@@ -32,6 +32,19 @@ FF::Scn::BoidCalculations.add(FF::Sys.new('ApplyBoidCalculations', priority: 75)
     group_velocity[1] += boid.vy
   end
 
+  group_velocity = [0.0,0.0]
+  center_mass = [0.0,0.0]
+  boids_count = FF::Cmp::Fish[0].entities.count
+
+  FF::Cmp::Fish[0].entities.each do |ent|
+    boid = ent.components[FF::Cmp::Boids].first
+
+    center_mass[0] += boid.x
+    center_mass[1] += boid.y
+    group_velocity[0] += boid.vx
+    group_velocity[1] += boid.vy
+  end
+
   @center_vel.x1 = @center.x = (center_mass[0] / boids_count)
   @center_vel.y1 = @center.y = (center_mass[1] / boids_count)
 

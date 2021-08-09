@@ -14,7 +14,7 @@ FF::Sys.new('Alignment', priority: 50) do
     move_boid[0] /= boids_count - 1.0
     move_boid[1] /= boids_count - 1.0
 
-    boid_update.cx += (move_boid[0] - boid_update.vx) / $alignment
-    boid_update.cy += (move_boid[1] - boid_update.vy) / $alignment
+    boid_update.cx += (move_boid[0] - boid_update.vx) / $config.alignment
+    boid_update.cy += (move_boid[1] - boid_update.vy) / $config.alignment
   end
 end
