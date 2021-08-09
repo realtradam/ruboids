@@ -1,5 +1,5 @@
 FF::Stg.add FF::Scn.new('Default')
-FF::Stg.add FF::Scn.new('BoidCalculations')
+FF::Scn.new('BoidCalculations')
 
 FelFlame::Components.new('Boids',
                          # holds the object to render
