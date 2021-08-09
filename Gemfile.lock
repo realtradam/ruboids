@@ -3,6 +3,8 @@ GEM
   specs:
     felflame (3.0.0)
     ruby2d (0.10.0)
+    ruby2d-camera (1.0.0)
+      ruby2d (~> 0.10)
 
 PLATFORMS
   x86_64-linux
@@ -10,6 +12,7 @@ PLATFORMS
 DEPENDENCIES
   felflame (~> 3.0)
   ruby2d (~> 0.10.0)
+  ruby2d-camera (~> 1.0)
 
 BUNDLED WITH
    2.2.22
