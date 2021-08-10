@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Fish
   def self.create(x, y)
     FF::Ent.new(
@@ -10,7 +12,7 @@ class Fish
         ),
         vect: Camera::Line.new(
           width: 7,
-          color: [1.0,0,0,0.5],
+          color: [1.0, 0, 0, 0.5],
           z: -1
         )
       )

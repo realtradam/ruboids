@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 FF::Sys.new('Alignment', priority: 50) do
-  group_velocity = [0.0,0.0]
+  group_velocity = [0.0, 0.0]
   boids_count = FF::Cmp::Boids.each.to_a.count
 
   FF::Cmp::Boids.each do |boid|

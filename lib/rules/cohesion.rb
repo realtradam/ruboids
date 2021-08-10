@@ -1,6 +1,7 @@
-FF::Sys.new('Cohesion', priority: 50) do
+# frozen_string_literal: true
 
-  center_mass = [0.0,0.0]
+FF::Sys.new('Cohesion', priority: 50) do
+  center_mass = [0.0, 0.0]
   boids_count = FF::Cmp::Fish[0].entities.count
 
   FF::Cmp::Fish[0].entities.each do |ent|

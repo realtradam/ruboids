@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FF::Sys.new('Bounds', priority: 50) do
   FF::Cmp::Boids.each do |boid|
     if boid.x > $config.xmax

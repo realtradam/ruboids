@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'ruby2d'
 require 'ruby2d/camera'
 require 'felflame'
@@ -30,11 +32,11 @@ FF::Cmp.new('SingletonConfig',
 
             # How much the boids try to pull together
             # Smaller is stronger
-            cohesion: 10000.0,
+            cohesion: 10_000.0,
 
             # How much the boids push away from eachother
             # Smaller is stronger
-            seperation: 115.0, 
+            seperation: 115.0,
             # What the range of seperating should be
             seperation_distance: 70.0,
 
@@ -54,8 +56,7 @@ FF::Cmp.new('SingletonConfig',
 $config = FF::Cmp::SingletonConfig.new
 
 # Used by the Camera Library
-set(title: "Ruboids", width: 1164, height: 764, resizable: true)
-
+set(title: 'Ruboids', width: 1164, height: 764, resizable: true)
 
 Dir[File.join(__dir__, 'lib/**', '*.rb')].sort.each { |file| require file }
 
@@ -72,7 +73,7 @@ class GameWindow < Ruby2D::Window
     FF::Stg.add FF::Scn::BoidCalculations
 
     # background
-    Camera::Image.new('assets/aquarium.png', x: -get(:width)+57, y: -get(:height)+97, z: -98)
+    Camera::Image.new('assets/aquarium.png', x: -get(:width) + 57, y: -get(:height) + 97, z: -98)
 
     # stores array of valid positions on which to spawn
     # (not actually valid but close enough)
@@ -101,16 +102,22 @@ class GameWindow < Ruby2D::Window
     end
 
     if @mouse_right_held && mouse_move
-      Camera.x += Camera.coordinate_to_worldspace(@x_mouse_previous, @y_mouse_previous)[0] - Camera.coordinate_to_worldspace(get(:mouse_x), get(:mouse_y))[0]
-      Camera.y += Camera.coordinate_to_worldspace(@x_mouse_previous, @y_mouse_previous)[1] - Camera.coordinate_to_worldspace(get(:mouse_x), get(:mouse_y))[1]
+      Camera.x += Camera.coordinate_to_worldspace(@x_mouse_previous,
+                                                  @y_mouse_previous)[0] - Camera.coordinate_to_worldspace(
+                                                    get(:mouse_x), get(:mouse_y)
+                                                  )[0]
+      Camera.y += Camera.coordinate_to_worldspace(@x_mouse_previous,
+                                                  @y_mouse_previous)[1] - Camera.coordinate_to_worldspace(
+                                                    get(:mouse_x), get(:mouse_y)
+                                                  )[1]
       #Camera.y -= (@mouse_move_delta_y * 5) / Camera.zoom #Camera.coordinate_to_worldspace(@mouse_move_delta_y,0)
     end
 
     if mouse_scroll
-      if @mouse_scroll_delta_y < 0
-      Camera.zoom *= 1.1
-      elsif @mouse_scroll_delta_y > 0 
-      Camera.zoom /= 1.1
+      if @mouse_scroll_delta_y.negative?
+        Camera.zoom *= 1.1
+      elsif @mouse_scroll_delta_y.positive?
+        Camera.zoom /= 1.1
       end
     end
 
@@ -123,7 +130,7 @@ class GameWindow < Ruby2D::Window
       a = Piranha.create($config.target_x - 75, $config.target_y - 75)
       a.components[FF::Cmp::BoidVisuals][0].vect.remove unless $config.debug
     end
-    FF::Stage.call 
+    FF::Stage.call
     Camera.y += 5 if key_held('s')
     Camera.y -= 5 if key_held('w')
     Camera.x += 5 if key_held('d')
@@ -136,7 +143,6 @@ class GameWindow < Ruby2D::Window
     #puts get(:fps)
   end
 end
-
 
 gamewindow = GameWindow.new
 gamewindow.set(title: get(:title), width: get(:width), height: get(:height), resizable: get(:resizable))
