@@ -1,6 +1,5 @@
 class Piranha
   def self.create(x, y)
-    puts 'creating...'
     FF::Ent.new(
       FF::Cmp::Piranha[0],
       FF::Cmp::Boids.new(x: x, y: y),

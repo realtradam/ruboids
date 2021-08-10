@@ -10,7 +10,7 @@ FF::Sys.new('Limit') do
       end
 
       absolute_velocity = Math.sqrt((boid.vx**2) + (boid.vy**2))
-      if absolute_velocity > $config.limit
+      if absolute_velocity > ($config.limit * multi)
         boid.vx = (boid.vx / absolute_velocity) * $config.limit * multi
         boid.vy = (boid.vy / absolute_velocity) * $config.limit * multi
       end

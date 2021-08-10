@@ -1,6 +1,5 @@
 class Fish
   def self.create(x, y)
-    puts 'creating...'
     FF::Ent.new(
       FF::Cmp::Fish[0],
       FF::Cmp::Boids.new(x: x, y: y),

@@ -1,3 +1,30 @@
-## Boids simulation made using [Ruby2D](http://www.ruby2d.com) and [FelFlame](https://github.com/realtradam/FelFlame)
+![Piranha](https://naked.catgirls.rodeo/images/Predator%201.png)
 
-Making this mostly as a test of using FelFlame in a real project, to try out and see if I can find bugs of flaws in it.
+[![MIT License](https://img.shields.io/github/license/realtradam/FelFlame?label=license&style=flat)](https://github.com/realtradam/FelFlame/blob/master/LICENSE)
+[![Ko-Fi](https://img.shields.io/static/v1?message=Buy%20me%20a%20coffee&logo=kofi&labelColor=ff5e5b&color=434B57&logoColor=white&label=%20)](https://ko-fi.com/tradam)
+
+
+# Ruboids
+
+Ruboids is a [Boids Algorithm Simulation](https://en.wikipedia.org/wiki/Boids) made using [Ruby2D](http://www.ruby2d.com), [FelFlame](https://github.com/realtradam/FelFlame) and [Ruby2D-Camera](https://github.com/realtradam/ruby2d-camera)
+
+![Ruboid Example](https://naked.catgirls.rodeo/images/ruboid-example.gif)
+
+## How to Play
+
+### Without Bundler
+once you gem install `ruby2d`, `felflame`, and `ruby2d-camera` simple do `ruby run.rb`
+
+### Using Bundler
+`bundler install` followed by `bundler exec ruby run.rb`
+
+## Controls
+Left click on the screen to create a Piranha.  
+Right Click and drag to move the camera. (`w` `a` `s` `d` works as well)  
+Scrollwheel to zoom. (`z` and `x` work as well) 
+
+## Playing around with the parameters
+All the parameters you can change are nicely stored inside the `SingletomConfig` component in the `$config` variable in `run.rb` so it is easy to quickly and easily change and play around with them.
+
+## Purpose
+I made this to stress test my new framework FelFlame and see how it is, and it was really nice and easy making this game so I will probably continue to use it for future projects. Also just I wanted to play around with boids. 😁
