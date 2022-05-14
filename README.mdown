@@ -24,7 +24,7 @@ Right Click and drag to move the camera. (`w` `a` `s` `d` works as well)
 Scrollwheel to zoom. (`z` and `x` work as well) 
 
 ## Playing around with the parameters
-All the parameters you can change are nicely stored inside the `SingletomConfig` component in the `$config` variable in `run.rb` so it is easy to quickly and easily change and play around with them.
+All the parameters you can change are nicely stored inside the `SingletonConfig` component in the `$config` variable in `run.rb` so it is easy to quickly and easily change and play around with them.
 
 ## Purpose
 I made this to stress test my new framework FelFlame and see how it is, and it was really nice and easy making this game so I will probably continue to use it for future projects. Also just I wanted to play around with boids. 😁
