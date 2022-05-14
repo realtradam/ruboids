@@ -1,4 +1,4 @@
-![Piranha](https://naked.catgirls.rodeo/images/Predator%201.png)
+![Piranha](https://github.com/realtradam/ruboids/blob/master/assets/Predator%201.png?raw=true)
 
 [![MIT License](https://img.shields.io/github/license/realtradam/FelFlame?label=license&style=flat)](https://github.com/realtradam/FelFlame/blob/master/LICENSE)
 [![Ko-Fi](https://img.shields.io/static/v1?message=Buy%20me%20a%20coffee&logo=kofi&labelColor=ff5e5b&color=434B57&logoColor=white&label=%20)](https://ko-fi.com/tradam)
@@ -8,7 +8,7 @@
 
 Ruboids is a [Boids Algorithm Simulation](https://en.wikipedia.org/wiki/Boids) made using [Ruby2D](http://www.ruby2d.com), [FelFlame](https://github.com/realtradam/FelFlame) and [Ruby2D-Camera](https://github.com/realtradam/ruby2d-camera)
 
-![Ruboid Example](https://naked.catgirls.rodeo/images/ruboid-example.gif)
+![Ruboid Example](https://github.com/realtradam/ruboids/blob/master/ruboid-example.gif?raw=true)
 
 ## How to Play
 
