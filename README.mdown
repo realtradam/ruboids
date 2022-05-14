@@ -13,7 +13,7 @@ Ruboids is a [Boids Algorithm Simulation](https://en.wikipedia.org/wiki/Boids) m
 ## How to Play
 
 ### Without Bundler
-once you gem install `ruby2d`, `felflame`, and `ruby2d-camera` simple do `ruby run.rb`
+once you install the gems `ruby2d`, `felflame`, and `ruby2d-camera` simply do `ruby run.rb`
 
 ### Using Bundler
 `bundler install` followed by `bundler exec ruby run.rb`
